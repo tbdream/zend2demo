@@ -1,0 +1,28 @@
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'ALL Party';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+    <a href="<?php echo $this->url('Party', array('action'=>'add'));?>">报名</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>姓名</th>
+    <th>班级</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($Party as $Party) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($Party->user_name);?></td>
+    <td><?php echo $this->escapeHtml($Party->user_group);?></td>
+    <td>
+        <a href="<?php echo $this->url('Party',array('action'=>'edit', 'id' => $Party->id));?>">Edit</a>
+        <a href="<?php echo $this->url('Party',array('action'=>'delete', 'id' => $Party->id));?>">Delete</a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
