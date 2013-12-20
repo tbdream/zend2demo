@@ -15,7 +15,7 @@
  * the use of composer completely optional. This setup should work fine for
  * most users, however, feel free to configure autoloading however you'd like.
  */
-
+error_reporting(E_ALL | E_STRICT);
 // Composer autoloading
 if (file_exists('vendor/autoload.php')) {
     $loader = include 'vendor/autoload.php';

@@ -17,10 +17,11 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        //return new ViewModel();
+        return new View();
     }
 /**
- * µÇÂ¼ÑéÖ¤Ä£¿é
+ * ï¿½ï¿½Â¼ï¿½ï¿½Ö¤Ä£ï¿½ï¿½
  * @return \Zend\View\View
  */    
     public function loginAction()
@@ -28,7 +29,7 @@ class IndexController extends AbstractActionController
     	return new View();
     }
 /**
- * µÇ³öÑéÖ¤Ä£¿é
+ * ï¿½Ç³ï¿½ï¿½ï¿½Ö¤Ä£ï¿½ï¿½
  * @return \Zend\View\View
  */    
     public function logoutAction()
@@ -37,7 +38,7 @@ class IndexController extends AbstractActionController
     }
     
 /**
- * ×¢²áÄ£¿é
+ * ×¢ï¿½ï¿½Ä£ï¿½ï¿½
  * @return \Zend\View\View
  */  
     public function registerAction()

@@ -19,7 +19,7 @@ class UserTable
         return $resultSet;
     }
 
-    public function getCollect_info($id)
+    public function get_info($id)
     {
         $id  = (int) $id;
         $rowset = $this->tableGateway->select(array('id' => $id));
@@ -30,7 +30,7 @@ class UserTable
         return $row;
     }
 
-    public function saveCollect_info(Collect_info $Collect_info)
+    public function save_info(User $Collect_info)
     {
         $data = array(
             'artist' => $Collect_info->artist,
@@ -41,7 +41,7 @@ class UserTable
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {
-            if ($this->getCollect_info($id)) {
+            if ($this->get_info($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
                 throw new \Exception('Form id does not exist');
@@ -49,7 +49,7 @@ class UserTable
         }
     }
 
-    public function deleteCollect_info($id)
+    public function delete_info($id)
     {
         $this->tableGateway->delete(array('id' => $id));
     }
